@@ -1,0 +1,15 @@
+3ab = não pode
+ab3 = pode
+a3b = pode
+FIM = pode
+sim = pode
+int = não pode
+\meu = não pode
+A = pode
+nao = pode
+não = não pode
+A123 = pode
+papel-branco = pode
+a* = não pode
+c++ = não pode
+nova_variavel = pode
