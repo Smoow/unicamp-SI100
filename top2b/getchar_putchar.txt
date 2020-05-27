@@ -1,0 +1,6 @@
+Uso do getchat() e putchar()
+
+ Suponha que você queira ler um único caractere, mas não quer usar o scanf(). Isso pode ser feito usando a função getchar(). A função putchar() aceita um argumento de entrada, cujo valor será impresso como caracter.
+ getchar() é uma função da biblioteca padrão stdio. Cada vez que é chamada, esta função lê um caractere teclado; getchar começa a ler depois que a tecla ENTER digitada no final de uma sequência de caracteres (dizemos que a entrada para a função getchar() está no fluxo de entrada). A função getchar() retorna um valor, o caractere lido (mais precisamente, o código inteiro ASCII correspondente ao caractere). 
+ getchar() obtém sua entrada do teclado. Portanto, quando o programa é executado, espera-se que o usuário digite alguma coisa. Cada caractere digitado é mostrado no monitor. O usuário pode digitar diversos caracteres na mesma linha, inclusive backspace para corrigir caracteres já digitados. No momento que ele teclar ENTER, o primeiro caractere da sequência digitada é o resultado da função getchar().
+ O tipo do resultado da função getchar() é int e não char. O valor retornado pela função é o código ASCII do caractere lido. 
