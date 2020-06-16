@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//encontrar uma maneira de printar apenas um total para cada repetição (caso exista repetição)
-
 int main(){
 
 	struct funcionario
@@ -16,7 +14,11 @@ int main(){
 
 	char temp;
 	char fim[] = "FIM";
-	int n, i;
+	char temp3[101];
+	float temp4;
+	int i;
+	int temp2;
+	float salarios[100] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 	struct funcionario *pont;
 	pont = (struct funcionario*) malloc(100 * sizeof(struct funcionario));
@@ -28,16 +30,44 @@ int main(){
 		scanf("%c", &temp);
 		
 		if (strcmp(fim, pont[i].nome) == 0){
+
+			  for(int f=0;f<100;f++)                               //Ordem alfabetica [nomes]
+      			for(int d=f+1;d<100;d++){
+         			if(strcmp(pont[f].nome,pont[d].nome)>0){
+            			strcpy(temp3,pont[f].nome);
+            			strcpy(pont[f].nome,pont[d].nome);
+            			strcpy(pont[d].nome,temp3);
+            			temp4 = pont[f].total;
+            			pont[f].total = pont[d].total;
+            			pont[d].total = temp4; 
+
+        			}
+      			}
+
+
+			for (int j = 99; j > 0; j--){                          //Salarios por ordem crescente
+				for (int k = 0; k < j; k++){
+						if (salarios[k] > salarios[k+1]) {
+							temp2 = salarios[k];
+							salarios[k] = salarios[k+1];
+							salarios[k+1] = temp2;
+						}
+				}
+			}
+
 			printf("Folha de Pagamento\n\n");
-			for (int n = 0; n < i; n++)
+			for (int n = 0; n < 100; n++)
 			{
-				printf("Salario no Mes: R$ %.2f\n", pont[n].total);
-				
-				//printf("%s\n", pont[n].nome);
-				//printf("Base = R$ %.2f\n", pont[n].base);
-				//printf("Comissao = R$ %.2f\n", pont[n].comissao);
-				//printf("Total = R$ %.2f\n", pont[n].total);
-				//printf("---------------\n");
+				if (salarios[n] != 0.0)
+				{
+					printf("Salario no Mes: R$ %.2f\n", salarios[n]);
+					for (int l = 0; l < 101; l++) {
+						if ((pont[l].total == salarios[n]))
+						printf("- %s\n", pont[l].nome);
+					}
+					printf("\n");
+
+				}
 			}
 			return 0;
 		}
@@ -45,7 +75,19 @@ int main(){
 		scanf("%f", &pont[i].base);
 		scanf("%f", &pont[i].comissao);
 
-		pont[i].total = pont[i].comissao + pont[i].base;
+		int dif = 1;
+
+		pont[i].total = pont[i].comissao + pont[i].base;                 //Verificacao para encontrar o salario total, sem repeticoes
+		for (int k = 0; k < 100; k++){
+			if (pont[i].total == salarios[k]){
+				dif = 0;
+				break;
+			}
+		}
+
+		if (dif == 1){
+			salarios[i] = pont[i].total;
+		}
 
 	}
 
