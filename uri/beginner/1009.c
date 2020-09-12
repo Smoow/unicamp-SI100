@@ -9,4 +9,5 @@ int main() {
     printf("TOTAL = R$ %.2lf\n", total);
 
     return 0;
+    
 }
