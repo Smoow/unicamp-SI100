@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main(){
-
+int main()
+{
 	int n, s, fatn, fats, fatsub;
 
 	scanf("%d", &n);
@@ -11,21 +11,24 @@ int main(){
 
 	// fatorial de cada um
 
-	for (fatn=1; n>1; n--){
+	for (fatn = 1; n > 1; n--)
+	{
 		fatn = fatn * n;
 	}
 
-	for (fats=1; s>1; s--){
+	for (fats = 1; s > 1; s--)
+	{
 		fats = fats * s;
 	}
 
-	for (fatsub=1; sub>1; sub--){
+	for (fatsub = 1; sub > 1; sub--)
+	{
 		fatsub = fatsub * sub;
 	}
 
 	// conta principal
 
-	printf("%d\n", fatn / (fats * (fatsub)) );
+	printf("%d\n", fatn / (fats * (fatsub)));
 
 	return 0;
 }

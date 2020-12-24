@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(){
-
+int main()
+{
 	struct Ponto
 	{
 		double x;
 		double y;
-	}p1, p2;
+	} p1, p2;
 
-	scanf("%lf %lf", &p1.x, &p1.y);			// input p1
-	scanf("%lf %lf", &p2.x, &p2.y);			// input p2
+	scanf("%lf %lf", &p1.x, &p1.y); // input p1
+	scanf("%lf %lf", &p2.x, &p2.y); // input p2
 
 	printf("Ponto 1 - x = %lf | y = %lf\n", p1.x, p1.y);
 	printf("Ponto 2 - x = %lf | y = %lf\n", p2.x, p2.y);
@@ -24,7 +24,6 @@ int main(){
 	distancia = sqrt(pow(difX, 2) + pow(difY, 2));
 
 	printf("A distancia euclidiana entre os pontos é %lf\n", distancia);
-
 
 	return 0;
 }

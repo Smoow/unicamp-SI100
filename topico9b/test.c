@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
 	int p, q, *r, *s;
 	p = 30;
@@ -22,7 +23,6 @@ int main(){
 	printf("valor de r = %p\n", r);
 	printf("conteudo de r = %d\n", *r);
 	printf("endereço de r = %p\n", &r);
-
 
 	return 0;
 }

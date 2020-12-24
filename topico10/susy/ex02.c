@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main()
+{
 
 	int linha, coluna, i, tamanho;
 	scanf("%d %d", &linha, &coluna);
@@ -14,37 +15,46 @@ int main(){
 		return 0;
 	}
 
-	int** mat;  // Matriz Principal
-	mat = (int**) malloc(linha*sizeof(int*));
+	int **mat; // Matriz Principal
+	mat = (int **)malloc(linha * sizeof(int *));
 
-	for (i = 0; i < linha; i++) {
-		mat[i] = (int*) malloc(coluna*sizeof(int));
+	for (i = 0; i < linha; i++)
+	{
+		mat[i] = (int *)malloc(coluna * sizeof(int));
 	}
 
-	for (linha = 0; linha < tamanho; linha++) {
-		for (coluna = 0; coluna < tamanho; coluna++) {
+	for (linha = 0; linha < tamanho; linha++)
+	{
+		for (coluna = 0; coluna < tamanho; coluna++)
+		{
 			scanf("%d", &mat[linha][coluna]);
 		}
 	}
 
-	int** transp;  // Matriz Transposta
-	transp = (int**) malloc(linha*sizeof(int*));
+	int **transp; // Matriz Transposta
+	transp = (int **)malloc(linha * sizeof(int *));
 
-	for (i = 0; i < linha; i++) {
-		transp[i] = (int*) malloc(coluna*sizeof(int));
+	for (i = 0; i < linha; i++)
+	{
+		transp[i] = (int *)malloc(coluna * sizeof(int));
 	}
 
-	for (linha = 0; linha < tamanho; linha++) {
-		for (coluna = 0; coluna < tamanho; coluna++) {
+	for (linha = 0; linha < tamanho; linha++)
+	{
+		for (coluna = 0; coluna < tamanho; coluna++)
+		{
 			transp[coluna][linha] = mat[linha][coluna];
 		}
-	}	
+	}
 
 	// Checagem
 
-	for (linha = 0; linha < tamanho; linha++) {
-		for (coluna = 0; coluna < tamanho; coluna++) {
-			if (mat[linha][coluna] != transp[linha][coluna]) {
+	for (linha = 0; linha < tamanho; linha++)
+	{
+		for (coluna = 0; coluna < tamanho; coluna++)
+		{
+			if (mat[linha][coluna] != transp[linha][coluna])
+			{
 				printf("Nao eh simetrica\n");
 				exit(0);
 			}
@@ -52,7 +62,6 @@ int main(){
 	}
 
 	printf("Eh simetrica\n");
-
 
 	return 0;
 }

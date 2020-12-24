@@ -3,8 +3,8 @@
 
 float media(char chr, float n1, float n2);
 
-int main(){
-
+int main()
+{
 	char chr = getchar();
 	float n1 = 0, n2 = 0;
 	scanf("%f %f", &n1, &n2);
@@ -14,12 +14,14 @@ int main(){
 	return 0;
 }
 
-float media(char chr, float n1, float n2){
-
-	if (chr == 'A'){
+float media(char chr, float n1, float n2)
+{
+	if (chr == 'A')
+	{
 		return ((n1 + n2) / 2);
 	}
-	else if (chr == 'B'){
+	else if (chr == 'B')
+	{
 		return sqrt(n1 * n2);
 	}
 

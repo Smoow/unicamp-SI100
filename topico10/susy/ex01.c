@@ -2,16 +2,17 @@
 #include <stdlib.h>
 #include <math.h>
 
-
-int main(){
+int main()
+{
 
 	float n;
 	scanf("%f", &n);
 
 	int i;
 
-	float *poly = (float *) malloc(n * sizeof(float));
-	for (i = 0; i <= n; i++){
+	float *poly = (float *)malloc(n * sizeof(float));
+	for (i = 0; i <= n; i++)
+	{
 		scanf("%f", &poly[i]);
 	}
 
@@ -20,7 +21,8 @@ int main(){
 
 	float total = 0.0;
 
-	for (i = 0; i <= n; i++){
+	for (i = 0; i <= n; i++)
+	{
 		total += poly[i] * (pow(x, i));
 	}
 

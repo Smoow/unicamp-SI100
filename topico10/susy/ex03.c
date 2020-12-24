@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(){
+int main()
+{
 
 	struct aluno
 	{
@@ -17,7 +18,7 @@ int main(){
 	scanf("%d", &n);
 
 	struct aluno *pont;
-	pont = (struct aluno*) malloc(n * sizeof(struct aluno));
+	pont = (struct aluno *)malloc(n * sizeof(struct aluno));
 
 	for (i = 0; i < n; i++)
 	{

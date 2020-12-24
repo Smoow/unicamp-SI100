@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-
-int main(){
-
+int main()
+{
 	struct corpo
 	{
 		float altura;
@@ -17,6 +16,6 @@ int main(){
 	float imc = pessoa.peso / (pessoa.altura * pessoa.altura);
 
 	printf("%.3f\n", imc);
-	
+
 	return 0;
 }
